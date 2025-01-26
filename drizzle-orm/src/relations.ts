@@ -276,17 +276,17 @@ export type DBQueryConfig<
 				: {})
 		: {})
 	& (TRelationType extends 'one' ? 
-	       & { 
-		      where?:
-    			| SQL
-    			| undefined
-    			| ((
-    				fields: Simplify<
-    					[TTableConfig['columns']] extends [never] ? {}
-    						: TTableConfig['columns']
-    				>,
-    				operators: Operators,
-    			) => SQL | undefined);
+            & { 
+                where?:
+                    | SQL
+                    | undefined
+                    | ((
+                        fields: Simplify<
+                            [TTableConfig['columns']] extends [never] ? {}
+                                : TTableConfig['columns']
+                    >,
+                    operators: Operators,
+                    ) => SQL | undefined);
 			} 
 		: {})
 
